@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+:root {
+    /* Main colors */
+    --white: #fff;
+
+    /* Dark blue */
+    --dark-blue-100: #609ed4;
+    --dark-blue-200: #356ea9;
+    --dark-blue-300: #0a3871;
+    --dark-blue-400: #072b61;
+    --dark-blue-500: #052051;
+
+    /* Light blue */
+    --light-blue-100: #f3f5fc;
+    --light-blue-200: #eff1fa;
+    --light-blue-300: #e9ecf8;
+    --light-blue-400: #aab2d5;
+    --light-blue-500: #757fb2;
+
+    /* Gray */
+    --gray-100: #ced4da;
+    --gray-200: #adb5bd;
+    --gray-300: #868e96;
+    --gray-400: #495057;
+    --gray-500: #343a40;
+
+    /* Light gray */
+    --light-gray: #d8dfe8;
+}
+
+/* Normalize */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter";
+}
+
+/* Body styles */
+body {
+    background-color: var(--light-blue-100);
+    height: 100vh;
+}
+
+/* Logo styles */
+#logoAlura {
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+/* Main container styles */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 80%;
+}
+
+/* Encrypt section styles */
+.section-encrypt {
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+.section-encrypt textarea {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    resize: none;
+    color: var(--dark-blue-300);
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.section-encrypt textarea:focus {
+    outline: none;
+}
+
+.section-encrypt textarea::placeholder {
+    color: var(--dark-blue-300);
+}
+
+.section-encrypt div:last-of-type {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Decrypt section styles */
+.section-decrypt {
+    width: 25%;
+    height: 100%;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 32px;
+    padding-right: 32px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+
+    position: relative;
+}
+
+.section-decrypt h3 {
+    color: var(--gray-500);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+.section-decrypt p:last-of-type {
+    color: var(--gray-400);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.section-decrypt img {
+    width: 100%;
+}
+
+#decrypt-text {
+    color: var(--gray-400);
+    width: 100%;
+    height: 100%;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 16px;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+#message-found {
+    width: 100%;
+    height: 92%;
+    display: none; /* Cambiar a display: flex para que se vea y poner display: none en 
+    #message-not-found para quitar el mensaje actual. */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#message-not-found {
+    align-self: center;
+}
+
+.prompt-rules {
+    display: flex;
+    flex-direction: row;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    opacity: 0.8;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.prompt-rules img {
+    margin-right: 8px;
+    width: 1rem;
+    height: 1rem;
+}
+
+#encrypt-button {
+    background-color: var(--dark-blue-300);
+    color: var(--white);
+    width: 50%;
+    height: 67px;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 24px;
+    border: none;
+    cursor: pointer;
+    margin-right: 24px;
+    transition: 1s;
+}
+
+#encrypt-button:hover {
+    background-color: var(--dark-blue-500);
+    transition: 1s;
+}
+
+#decrypt-button {
+    background-color: var(--light-gray);
+    color: var(--dark-blue-300);
+    width: 50%;
+    height: 67px;
+    font-size: 1rem;
+    font-weight: 400;
+    border: 1px solid var(--dark-blue-300);
+    border-radius: 24px;
+    cursor: pointer;
+    transition: 1s
+}
+
+#decrypt-button:hover {
+    background-color: var(--gray-100);
+    transition: 1s;
+}
+
+#copy-button {
+    background-color: var(--white);
+    color: var(--dark-blue-300);
+    width: 100%;
+    height: 67px;
+    font-size: 1rem;
+    font-weight: 400;
+    border: 1px solid var(--dark-blue-300);
+    border-radius: 24px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+#copy-button:hover {
+    background-color: var(--light-blue-200);
+    transition: 1s;
+}
+
+#footer {
+    text-align: center;
+    font-size: 0.9rem;
+    height: auto;
+    margin-top: 2.5%;
+}
+
+#footer img {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    #logoAlura {
+        padding: 0;
+        padding-top: 40px;
+        padding-left: 30px;
+    }
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section-encrypt {
+        width: 100%;
+        height: 100%;
+        margin-top: 20%;
+    }
+
+    .section-decrypt {
+        width: 100%;
+        height: 35%;
+        padding: 0;
+        margin: 0;
+        margin-top: 64px;
+    }
+
+    .section-decrypt img {
+        display: none;
+    }
+
+    #message-not-found {
+        align-self: center;
+    }
+
+    .section-decrypt h3 {
+        margin-top: 0;
+    }
+
+    #decrypt-text {
+        width: 85%;
+        height: 65%;
+        margin: 0;
+        padding: 0;
+        margin-top: 3%;
+    }
+
+    #copy-button {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    #footer {
+        margin-top: 7%;
+    }
+}
+
+@media (max-width: 390px) {
+    #logoAlura {
+        padding: 0;
+        padding-top: 40px;
+    }
+
+    .section-encrypt {
+        margin-top: 20%;
+    }
+
+    .section-encrypt div:last-of-type {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-decrypt {
+        height: 30%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #encrypt-button {
+        width: 100%;
+        margin-bottom: 24px;
+        margin-right: 0;
+    }
+
+    #decrypt-button {
+        width: 100%;
+    }
+
+    #copy-button {
+        margin-bottom: 0;
+    }
+
+    #footer {
+        margin-top: 15%;
+    }
+}
