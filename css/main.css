@@ -110,6 +110,7 @@ body {
     border-radius: 32px;
 
     position: relative;
+    transition: transform 0.3s ease-in-out;
 }
 
 .section-decrypt h3 {
